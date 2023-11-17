@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrator de Dados - EkoOS</title>
+    <link rel="stylesheet" href="../../static/css/index.css">
+</head>
+
+<body>
+
+
+    <main>
+        <nav>
+            <ul>
+                <a href="#"><img width="48" height="48" src="https://img.icons8.com/color/48/xls.png"
+                        alt="Converte Excel" class="converte_excel" /></a>
+                <a href="#"><img width="50" height="50" src="../../static/icones/combinar-doc.png" alt="merge-docunemts"
+                        class="combina_pdf" /></a>
+            </ul>
+        </nav>
+        <h1>Extrator de Dados</h1>
+
+        <article>
+
+            <section class="merge" >
+                <form action="/merge/" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <h1>Combinar arquivos:</h1>
+                    <input type="file" name="pdf_merge" accept="application/pdf" id="pdf_merge" multiple required><label
+                        for="pdf_merge">Inserir Arquivos</label>
+                        <input type="submit" value="Combinar" formtarget="_blank" class="botao">
+                    <ul class="listagem_merge">
+
+                    </ul>
+                </form>
+            </section>
+
+            <section class="arquivos">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>Extrair dados:</h1>
+                    <input type="file" name="pdf_file" accept="application/pdf" id="pdf_file" required><label
+                        for="pdf_file">Inserir Arquivos</label>
+                    
+                    <input type="submit" value="Extrair" class="botao">
+                </form>
+            </section>
+
+            <section class="lista_arquivos">
+                <h1>Listagem de Arquivos:</h1>
+                <ul class="listagem">
+
+                </ul>
+            </section>
+
+
+        </article>
+
+        <aside>
+
+        </aside>
+    </main>
+    <script src="../../static/js/index.js"></script>
+</body>
+
+</html>
